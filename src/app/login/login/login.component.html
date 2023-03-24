@@ -1,0 +1,12 @@
+<div class="container">
+
+    <h2>Login</h2>
+    <form #login="ngForm" [formGroup]="loginPage" (ngSubmit)="onLogin()">
+        <label for="">User Name</label>
+        <input formControlName="customerName" type="text" id="cutname" name="custname">
+        <label for="">Password</label>
+        <input formControlName="password" type="password" id="pass" name="pass">
+        <button type="submit" [disabled]="loginPage.invalid" class="submit">Login</button>
+        <a [routerLink]="['/user/register']"> Register</a>
+    </form>
+</div>

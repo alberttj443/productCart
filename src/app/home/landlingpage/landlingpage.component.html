@@ -1,0 +1,27 @@
+
+
+<div class="row header">
+    <div class="col-4">
+        <span  [routerLink]="['/home']">Shoping App </span>
+    </div>
+    <div class="col-2">
+        <span [routerLink]="['/home/cart']">Cart</span>
+    </div>
+    <div class="col-2">
+        <span [routerLink]="['/home/order']">Order</span>
+    </div>
+    <div class="col-2">
+        <img [routerLink]="['/home/profile']" class="profilepic" src="assets/profile.png" alt="">
+    </div>
+    <div class="col-2">
+        <span class="right">
+          
+                 <span  [routerLink]="['/user/login']">{{login?'Logout':'Login'}}</span>
+              
+         </span>
+    </div>
+
+</div>
+<div class="workplace">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,25 @@
+<div  class="container">
+
+    <h2>Registration</h2>
+    <form   [formGroup]="registerForm" (ngSubmit)="onRegister()"> 
+                <label for="">Customer Name</label><input formControlName="customerName" type="text" id="cutname" name="custname">
+            
+    
+
+    <label for="">Country</label>
+    <select formControlName="country" type="text" id="country" name="country"> 
+        <option [value]="data" *ngFor="let data of countries">{{data}}</option>
+    </select>
+    <label for="">State</label><input formControlName="state" type="text" id="state" name="state">
+    <label for="">District</label><input formControlName="district" type="text" id="District" name="District">
+    <label for="">City</label><input  formControlName="city" type="text" id="city" name="city">
+    
+    <label for="">Contact Number</label><input  formControlName="contatctno" type="text" maxlength="10" appNumberonly id="phn" name="phn">
+    <label for="">Mail</label><input  formControlName="mail" type="text" id="mail" name="mail">
+    <label for="">Delivery Address</label><textarea  formControlName="address" type="text" id="mail" name="mail" rows="6"></textarea>
+    
+    <button [disabled]="registerForm.invalid" type="submit" class="submit">Registration</button>
+    <a [routerLink]="['/user/login']"> Existing user ?</a>
+     
+</form> 
+</div>

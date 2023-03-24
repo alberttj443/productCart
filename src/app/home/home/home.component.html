@@ -1,0 +1,24 @@
+
+
+<div>
+    <div class="row center">
+        <div class="col-6 ">
+            <input type="text" id="search" name="search" placeholder=" Search items" [(ngModel)]="search">
+        </div>
+    </div>
+    </div>
+    <div class="row itemslist center prodlist">
+    <div class="prodimage"  (click)="openProdDetails(data)" *ngFor="let data of items | prodfilter:search ">
+        
+        
+        <img [src]="data.imgpath" alt="">
+        <div class="prodDetails">
+            <div class="prodname">{{data.prodname}} </div>
+            <div class="prodamount">Amount :{{data.grossRate}} </div>
+            <div class="cartoption" (click)="$event.stopPropagation();addToCart(data)"> {{data.cart?'Remove from cart':'Add to cart'}}</div>
+        </div>
+        
+         
+    </div>
+    <app-product *ngIf="prodPopup" [data]="selectedItem" (response)="closeProdPopup($event)"></app-product>
+</div>

@@ -1,0 +1,33 @@
+.header {
+    align-items: center;
+    height: 50px;
+    padding: 0px 14px;
+    background:#325570;
+    margin-bottom: 10px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 4;
+}
+
+.right {
+    float: right;
+}
+
+span {
+    cursor: pointer;
+}
+.workplace{
+    max-width: 86%;
+    margin: auto; 
+    padding-top: 55px;
+
+}
+.profilepic {
+    width: 25px;
+    border-radius: 10px; 
+    cursor: pointer;
+    margin-left: auto;
+    display: block;
+}

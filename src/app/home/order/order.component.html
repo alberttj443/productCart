@@ -1,0 +1,39 @@
+ 
+
+<ejs-grid [dataSource]='orderItems'   (rowSelected)= rowSelected($event) >
+    <e-columns>
+        <e-column field='orderNumber' headerText='Order Number' ></e-column>
+        <e-column field='itemCount' headerText='Number Of Items '  textAlign='Right'></e-column>
+        <e-column field='orderDate' headerText='Order Date ' runat="server" type='date'  [format]="'mm/dd/yyyy hh:mm a'"></e-column>
+        <e-column field='grossAmount' headerText=' Amount ' textAlign='Right'  ></e-column>
+        <e-column field='Status' headerText='Status' textAlign='Right' ></e-column>
+    </e-columns>
+</ejs-grid>
+
+<ejs-dialog id='dialog' #ejDialog [visible]='false' width='563px'  [showCloseIcon]='true' (beforeOpen)="onBeforeOpen($event)">
+ <ng-template #header (click)="closepopup()">
+     <span>Order Number : {{selectedItem?.orderNumber}}</span>
+      <!-- <span class="right" (click)="closepopup()">X </span> -->
+       
+    
+  </ng-template>
+  <ng-template #content>
+    <div> Order Date : {{selectedItem?.orderDate |date:'mm/dd/yyyy hh:mm a' }}</div>
+    <div>  Amount : {{selectedItem?.grossAmount}}</div>
+    <div> Status : {{selectedItem?.Status}}</div>
+ <h4>Items :</h4>
+    <div   *ngFor="let data of selectedItem?.items ">
+        <div class="row alignCenter">
+            <div class="col-2"><img class="prodimg" [src]="data.imgpath" alt=""></div>
+            <div class="col-4">
+              &nbsp; {{data.prodname}}  
+            </div>
+            <div class="col-2">Quantity :{{data.qty}}</div>
+            <div class="col-4">Amount :{{data.amount}}</div>
+          
+        </div>
+         
+        
+    </div>
+  </ng-template>
+</ejs-dialog>

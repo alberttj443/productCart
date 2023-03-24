@@ -1,0 +1,51 @@
+
+.container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: #2d252561;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .popup { 
+    width: 35rem;
+    padding: 3rem;  
+    background-color: white;
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25); 
+    transform: translateY(5%); 
+    transition: all 0.25s;
+    z-index: 1;
+    text-align: center;
+  
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+    }
+  
+    
+  
+    .close {
+      position: absolute;
+      color: black;
+      background-color: transparent;
+      font-weight: 700;
+      font-size: 1.25rem;
+      right: 0;
+      top: 0;
+      margin: 1rem 1.5rem;
+      border: none;
+    }
+  }
+  
+  .popup.active {
+    opacity: 1;
+    transform: translateY(0%);
+    visibility: visible;
+    z-index: 1;
+  }
+  

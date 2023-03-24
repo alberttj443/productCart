@@ -1,0 +1,16 @@
+<div class="container" (click)="onClose()">
+    <div class="popup" id="popup-card" (click)="$event.stopPropagation()">
+        <div class="prodimage" >
+            <img [src]="data.imgpath" alt="">
+            <div >{{data.prodname}} </div>
+            <div >Unit Rate: {{data.unitRate}} </div>
+            <div >Gross Rate: {{data.grossRate}} </div>
+            <div>
+                <div class="cartoption" (click)="addToCart();onClose()"> {{data.cart?'Remove from cart':'Add to cart'}}</div>
+                <!-- <button (click)="addToCart()">{{data.cart?'Remove from cart':'Add to cart'}}</button> -->
+            </div>
+        </div>
+        <button class="popup-close close" (click)="onClose()">x</button>
+    </div>  
+    
+  </div>

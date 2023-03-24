@@ -1,0 +1,40 @@
+
+<div class="" *ngIf="this.cartItems.length>0">
+    <div class="row alignCenter" *ngFor="let data of this.cartItems;let i =index">
+        <div class="col-2">
+            <div class="prodimg">
+                <img [src]="data.imgpath" alt="">
+            </div>
+        </div>
+        <div class="col-2">
+           <div>
+            {{data.prodname}}
+           </div>
+           <div>Unit Rate : {{data.unitRate}}</div>
+           <div>
+            Gross Rate :{{data.grossRate}}
+           </div>
+        </div>
+        <div class="col-2">
+            <label for="">Quantity</label> 
+             <input type="number" [(ngModel)]="data.qty" (keyup)="quantityChange(i)"  min="1" id="qty" name="qty" placeholder="Quantity" >
+        </div>
+        <div class="col-2">
+            <label for="">Net Payable Amount</label> <input type="number"  [ngModel]="data.amount"  disabled  min="1" id="amnt" name="amnt" placeholder="Net Amount" >
+        </div>
+        
+        <div class="col-4">
+            <button class="cancelBtn" (click)="removeFormCart(data)" >Remove from cart</button>
+        </div>
+    </div>
+    <div class="row center">
+        <div class="col-2"> <button  class="submit" [disabled]="formInvalid()" (click)="placeOrder()">Order now</button></div>
+        <div class="col-2">  <button class="cancelBtn" (click)="cancelOrder()">Cancel order</button></div>
+    </div>
+  
+ 
+</div> 
+<div class="alignCenter" *ngIf="this.cartItems.length<1">
+    No record found
+</div>
+ 
